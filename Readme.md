@@ -151,7 +151,7 @@ class MediumService {
 val system = initSystem()
 ```
 
-[Ver usuarios del sistema](https://github.com/unq-ui/medium-model/blob/main/resources/users.kt)
+[Ver usuarios del sistema](https://github.com/unq-ui/medium-model/blob/main/src/main/kotlin/data/Users.kt)
 
 ### Modelo
 
