@@ -1,5 +1,5 @@
 # UNQ » UIs » Dominio » Medium
-[![](https://jitpack.io/v/unq-ui/mercadolibre-model.svg)](https://jitpack.io/#unq-ui/mercadolibre-model)
+[![](https://jitpack.io/v/unq-ui/medium-model.svg)](https://jitpack.io/#unq-ui/medium-model)
 
 Construcción de Interfaces de Usuario, Universidad Nacional de Quilmes.
 
@@ -22,7 +22,7 @@ Agregar la dependencia:
 <dependency>
     <groupId>com.github.unq-ui</groupId>
     <artifactId>medium-model</artifactId>
-    <version>v1.0.0</version>
+    <version>v1.1.0</version>
 </dependency>
 ```
 
@@ -176,16 +176,11 @@ class User(
     val postsSaved: MutableList<Post>,
 )
 
-open class Item(val name: String)
-class Title(var data: String): Item("Title")
-class Image(var data: String): Item("Image")
-class Text(var data: String): Item("Text")
-class Quote(var data: String): Item("Quote")
-class Section(
-    val title: Title,
-    val image: Image?,
-    val text: Text,
-): Item("Section")
+open class Item(val name: String, var data: String)
+class Title(data: String): Item("Title", data)
+class Image(data: String): Item("Image", data)
+class Text(data: String): Item("Text", data)
+class Quote(data: String): Item("Quote", data)
 
 class Summary(
     var headline: String,

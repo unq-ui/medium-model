@@ -56,11 +56,19 @@ private fun addComments(mediumService: MediumService) {
     }
 }
 
+private fun addSavedPosts(mediumService: MediumService) {
+    mediumService.users.take(50).forEach { user ->
+        mediumService.posts.shuffled(random).take(10).forEach { post ->
+            mediumService.toggleSaved(user.id, post.id)
+        }
+    }
+}
 
 fun initSystem(): MediumService {
     val mediumService = MediumService()
     addUsers(mediumService)
     addPosts(mediumService)
     addComments(mediumService)
+    addSavedPosts(mediumService)
     return mediumService
 }

@@ -91,7 +91,6 @@ class MediumService {
      */
     fun promoteUserToAdmin(idUser: String): User {
         val user = getUser(idUser)
-        checkIfUserIsAdmin(user)
         user.role = AdminRole()
         return user
     }

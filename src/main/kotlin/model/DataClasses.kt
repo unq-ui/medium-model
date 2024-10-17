@@ -20,16 +20,11 @@ class User(
     val postsSaved: MutableList<Post>,
 )
 
-open class Item(val name: String)
-class Title(var data: String): Item("Title")
-class Image(var data: String): Item("Image")
-class Text(var data: String): Item("Text")
-class Quote(var data: String): Item("Quote")
-class Section(
-    val title: Title,
-    val image: Image?,
-    val text: Text,
-): Item("Section")
+open class Item(val name: String, var data: String)
+class Title(data: String): Item("Title", data)
+class Image(data: String): Item("Image", data)
+class Text(data: String): Item("Text", data)
+class Quote(data: String): Item("Quote", data)
 
 class Summary(
     var headline: String,
